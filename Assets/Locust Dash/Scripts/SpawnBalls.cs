@@ -31,12 +31,13 @@ public class SpawnBalls : MonoBehaviour
             {
                 // Debug.Log("Destroying ball: " + currentBall.name);
                 // Destroy(currentBall);
+                //Do not destroy balls here anymore, they should auto-self-destruct in BallMovement.cs
             }
             spawnPosition = cart.transform.position + cart.transform.forward * 5;
 
             spawnPosition.x += Random.Range(-deltaX / 2, deltaX / 2);
-            spawnPosition.z += Random.Range(0, deltaZ);
-            spawnPosition.y = 10;
+            spawnPosition.z += 50f + Random.Range(0, deltaZ);
+            spawnPosition.y = 0;
 
 
             currentBall = Instantiate(ballPrefab, spawnPosition, Quaternion.identity);

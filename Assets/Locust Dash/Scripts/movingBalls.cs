@@ -38,14 +38,14 @@ public class MovingBalls : MonoBehaviour
 
             // Add randomness to x and z
             spawnPosition.x += Random.Range(-deltaX / 2, deltaX / 2);
-            spawnPosition.z += Random.Range(0, 2 * deltaZ);
+            spawnPosition.z += 50f + Random.Range(0, 2 * deltaZ);
             spawnPosition.y = -0.5f;
 
             // Spawn the ball
             currentBall = Instantiate(ballPrefab, spawnPosition, Quaternion.identity);
 
             // Start moving the ball
-            StartCoroutine(MoveBall(currentBall));
+            // StartCoroutine(MoveBall(currentBall));
 
             yield return new WaitForSeconds(spawnInterval);
         }
