@@ -26,7 +26,7 @@ public class UI : MonoBehaviour
         stageText();
     }
 
-     public void coinCounter() {
+    public void coinCounter() {
         scoreText.text = "Coins: " + Counter.coins.ToString();
     }
 
@@ -38,7 +38,6 @@ public class UI : MonoBehaviour
         // play.SetActive(false);
         winningCanvas.SetActive(true);
         Time.timeScale = 0f;
-
     }
 
     public void lose() {
